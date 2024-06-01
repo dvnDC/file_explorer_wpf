@@ -1,0 +1,48 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+	  <UseWindowsForms>true</UseWindowsForms>
+	  <UseWPF>true</UseWPF>
+	  <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Asset\Flag\pl.png" />
+    <None Remove="Asset\Flag\usa.png" />
+    <None Remove="Asset\Icon\File.png" />
+    <None Remove="Asset\Icon\FilePhoto.png" />
+    <None Remove="Asset\Icon\FileTxt.png" />
+    <None Remove="Asset\Icon\FolderCase.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Asset\Flag\pl.png" />
+    <Resource Include="Asset\Flag\usa.png" />
+    <Resource Include="Asset\Icon\File.png" />
+    <Resource Include="Asset\Icon\FilePhoto.png" />
+    <Resource Include="Asset\Icon\FileTxt.png" />
+    <Resource Include="Asset\Icon\FolderCase.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Dictionary\Language\Strings.Designer.cs">
+      <DependentUpon>Strings.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Dictionary\Language\Strings.pl.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Dictionary\Language\Strings.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Strings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>
